@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/search_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@android:drawable/ic_menu_search"
+        android:ems="10"
+        android:textColor="#C0C0C0"
+        android:layout_alignParentTop="true"
+        android:hint="Search Channel" >
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ad"
+        android:layout_below="@+id/search_edt"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/contentList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp" >
+        </ListView>
+
+    </LinearLayout>
+
+    <com.google.ads.AdView
+        xmlns:googleads="http://schemas.android.com/apk/lib/com.google.ads"
+        android:id="@+id/ad"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        googleads:adSize="BANNER"
+        googleads:adUnitId="@string/admob_id"
+        googleads:loadAdOnCreate="true"
+        googleads:testDevices="TEST_EMULATOR" />
+
+</RelativeLayout>
